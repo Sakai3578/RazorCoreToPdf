@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using iTextSharp.text.pdf;
+using iTextSharp.text.xml;
 using iTextSharp.text;
 using iTextSharp.text.html.simpleparser;
 using System.IO;
@@ -14,11 +15,11 @@ namespace RazorCoreToPdf {
     public static class ResultPdf {
         public static async Task<FileContentResult> Download(
             this Controller controller,
-            string viewName,
+            //string viewName,
             object model,
             bool isPartial = false
         ) {
-            var viewAsString = await RenderingAsStringAsync.Run(viewName, model, controller.ControllerContext, isPartial);
+            var viewAsString = await RenderingAsStringAsync.Run(model, controller.ControllerContext, isPartial);
             var viewAsPdfVyteArray = _Main(viewAsString);
             return new FileContentResult(viewAsPdfVyteArray, "application/pdf");
         }

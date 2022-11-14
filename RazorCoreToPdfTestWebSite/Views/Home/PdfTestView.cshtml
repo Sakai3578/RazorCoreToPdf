@@ -4,23 +4,15 @@
 }
 <html>
 <head>
-
-    <style>
-        .date-table td {
-            border: 1px solid #000;
-            width: 200px;
-        }
-    </style>
+    <title>Pdf test</title>
 </head>
 <body>
 <div>
-    <a asp-action="Ass">Ass</a>
-    <p>現在時刻は@(Model.ToString())だよ。</p>
-    <p><u>CUrreaa @(Model.ToString())だよ。</u></p>
+    <p><u>Current time is @(Model.ToString()).</u></p>
     <table class="date-table">
         <tr>
             <td style="border: 1px solid #000;">
-                年
+                Year
             </td>
             <td style="border: 1px solid #000;">
                 @Model.Year
@@ -28,7 +20,7 @@
         </tr>
         <tr>
             <td>
-                月
+                Month
             </td>
             <td>
                 @Model.Month
@@ -36,7 +28,7 @@
         </tr>
         <tr>
             <td>
-                日
+                Day
             </td>
             <td>
                 @Model.Day
@@ -44,7 +36,5 @@
         </tr>
     </table>
 </div>
-
-
 </body>
 </html>

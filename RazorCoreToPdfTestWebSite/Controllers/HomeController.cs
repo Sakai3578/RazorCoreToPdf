@@ -15,14 +15,12 @@ namespace WebApplication1.Controllers {
             _logger = logger;
         }
 
-        public async Task<IActionResult> Index() {
+        public IActionResult Index() {
             return View();
         }
-        public async Task<IActionResult> Ass() {
-            return View();
-        }
-        public async Task<IActionResult> Opp() {
-            return await this.Download("Index", DateTime.Now);
+
+        public async Task<IActionResult> PdfTestView() {
+            return await this.Download(DateTime.Now);
         }
     }
 }
