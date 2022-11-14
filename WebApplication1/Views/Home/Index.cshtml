@@ -1,0 +1,50 @@
+﻿@model DateTime
+@{
+    Layout = null;
+}
+<html>
+<head>
+
+    <style>
+        .date-table td {
+            border: 1px solid #000;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <a asp-action="Ass">Ass</a>
+    <p>現在時刻は@(Model.ToString())だよ。</p>
+    <p><u>CUrreaa @(Model.ToString())だよ。</u></p>
+    <table class="date-table">
+        <tr>
+            <td style="border: 1px solid #000;">
+                年
+            </td>
+            <td style="border: 1px solid #000;">
+                @Model.Year
+            </td>
+        </tr>
+        <tr>
+            <td>
+                月
+            </td>
+            <td>
+                @Model.Month
+            </td>
+        </tr>
+        <tr>
+            <td>
+                日
+            </td>
+            <td>
+                @Model.Day
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+</body>
+</html>
