@@ -1,18 +1,26 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+﻿/*
+ * Copyright 2022 by Yasuyuki Sakai（堺 康行）.
+ * 
+ * The contents of this file may be used under the terms of the LGPL license 
+ * (the "GNU LIBRARY GENERAL PUBLIC LICENSE")
+ * https://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html
+ * 
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied.
+ * 
+ */
+
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.AspNetCore.Mvc.Controllers;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
 using System.Globalization;
 
 namespace RazorCoreToPdf {
     internal static class RenderingAsStringAsync {
         internal static async Task<string> Run(
-            //string viewName,
-            object model,
+            object? model,
             ControllerContext controllerContext,
             bool isPartial = false
         ) {

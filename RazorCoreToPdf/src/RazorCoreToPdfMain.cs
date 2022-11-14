@@ -1,21 +1,26 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using Microsoft.AspNetCore.Mvc.Razor;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using iTextSharp.text.pdf;
-using iTextSharp.text.xml;
+﻿/*
+ * Copyright 2022 by Yasuyuki Sakai（堺 康行）.
+ * 
+ * The contents of this file may be used under the terms of the LGPL license 
+ * (the "GNU LIBRARY GENERAL PUBLIC LICENSE")
+ * https://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html
+ * 
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied.
+ * 
+ */
+
 using iTextSharp.text;
 using iTextSharp.text.html.simpleparser;
-using System.IO;
+using iTextSharp.text.pdf;
+using Microsoft.AspNetCore.Mvc;
 
 namespace RazorCoreToPdf {
 
-    public static class ResultPdf {
+    public static class RazorCoreToPdfMain {
         public static async Task<FileContentResult> RazorToPdf(
             this Controller controller,
-            object model,
+            object? model = null,
             bool isPartial = false
         ) {
             var viewAsString = await RenderingAsStringAsync.Run(model, controller.ControllerContext, isPartial);
