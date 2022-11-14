@@ -1,13 +1,11 @@
 ﻿/*
  * Copyright 2022 by Yasuyuki Sakai（堺 康行）.
- * 
- * The contents of this file may be used under the terms of the LGPL license 
- * (the "GNU LIBRARY GENERAL PUBLIC LICENSE")
- * https://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html
- * 
- * Software distributed under the License is distributed on an "AS IS" basis,
- * WITHOUT WARRANTY OF ANY KIND, either express or implied.
- * 
+ *
+ * Released under the MIT license.
+ * see https://opensource.org/licenses/MIT
+ *
+ * The inherits function is:
+ * ISC license | https://github.com/isaacs/inherits/blob/master/LICENSE
  */
 
 using Microsoft.AspNetCore.Mvc;
@@ -31,7 +29,7 @@ namespace RazorCoreToPdf {
 
             var viewName = GetActionName(actionContext);
 
-            using var stringWriter = new StringWriter();
+            using var sw = new StringWriter();
             var viewResult = razorViewEngine!.FindView(actionContext, viewName, !isPartial);
 
             if (viewResult?.View == null) {
@@ -45,13 +43,13 @@ namespace RazorCoreToPdf {
                 viewResult.View,
                 viewDictionary,
                 new TempDataDictionary(actionContext.HttpContext, tempDataProvider!),
-                stringWriter,
+                sw,
                 new HtmlHelperOptions()
             );
 
             await viewResult.View.RenderAsync(viewContext);
 
-            return stringWriter.ToString();
+            return sw.ToString();
         }
 
         /// <summary>
