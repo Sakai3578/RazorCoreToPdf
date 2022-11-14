@@ -1,4 +1,4 @@
-namespace WebApplication1.Models {
+namespace RazorCoreToPdfTestWebSite.Models {
     public class ErrorViewModel {
         public string? RequestId { get; set; }
 

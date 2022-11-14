@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using WebApplication1.Models;
+using RazorCoreToPdfTestWebSite.Models;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using RazorCoreToPdf;
 
-namespace WebApplication1.Controllers {
+namespace RazorCoreToPdfTestWebSite.Controllers {
     public class HomeController : Controller {
         private readonly ILogger<HomeController> _logger;
 
@@ -20,7 +20,7 @@ namespace WebApplication1.Controllers {
         }
 
         public async Task<IActionResult> PdfTestView() {
-            return await this.Download(DateTime.Now);
+            return await this.RazorToPdf(DateTime.Now);
         }
     }
 }

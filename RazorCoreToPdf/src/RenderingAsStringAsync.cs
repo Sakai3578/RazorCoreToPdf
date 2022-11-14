@@ -42,6 +42,7 @@ namespace RazorCoreToPdf {
             );
 
             await viewResult.View.RenderAsync(viewContext);
+
             return stringWriter.ToString();
         }
 
