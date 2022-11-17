@@ -4,7 +4,9 @@ This is the code for displaying the Razor-rendered results in PDF for ASP.NET Co
 
 This project was inspired by "RazorPDF". However, I felt difficult for RazorPDF to work in the ASP.NET Core MVC environment, so I built it again here.
 
-Please note, this do not support the application of CSS in Razor yet.
+(Please note, this do not support the application of CSS in Razor yet.)
+
+Process overview
 
 # How to use
 
@@ -42,3 +44,7 @@ RazorCoreToPdf is licensed under MIT License.
 
 https://opensource.org/licenses/MIT
 
+# Appendix: Process overview
+![razor-to-pdf-process](https://user-images.githubusercontent.com/36692455/202465458-1602f447-f259-4408-b65b-76d33123c12d.png)
+![download-complete](https://user-images.githubusercontent.com/36692455/202465889-018eda91-77ab-47eb-b86b-b73475dcbcc6.png)
+![download-result](https://user-images.githubusercontent.com/36692455/202465774-d8f1edd4-1d9f-43be-a528-e806b2dc6aba.png)
