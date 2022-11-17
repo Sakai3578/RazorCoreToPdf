@@ -2,39 +2,6 @@
 @{
     Layout = null;
 }
-<html>
-<head>
-    <title>Pdf test</title>
-</head>
-<body>
-<div>
-    <p><u>Current time is @(Model.ToString()).</u></p>
-    <table class="date-table">
-        <tr>
-            <td style="border: 1px solid #000;">
-                Year
-            </td>
-            <td style="border: 1px solid #000;">
-                @Model.Year
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Month
-            </td>
-            <td>
-                @Model.Month
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Day
-            </td>
-            <td>
-                @Model.Day
-            </td>
-        </tr>
-    </table>
-</div>
-</body>
-</html>
+<p>
+    Current time is @(Model.ToString("hh:mm")).
+</p>
